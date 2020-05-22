@@ -42,9 +42,26 @@ public class Main {
         System.out.println("Please enter count");
         int count = scanner.nextInt();
         int[] input = readIntegers(count);
-        int min = findMin(input);
-        System.out.println(min);
+        System.out.println(Arrays.toString(input));
+
+      //  int min = findMin(input);
+        reverse(input);
+        System.out.println(Arrays.toString(input));
    }
+
+    private static void reverse(int[] input) {
+
+        int j = input.length-1;
+        for (int i = 0; i <j ; i++) {
+            int temp;
+            temp =input[i];
+            input[i] = input[j];
+            input[j] = temp;
+            j--;
+
+        }
+
+    }
 
     private static int[] readIntegers(int count){
 
@@ -116,9 +133,7 @@ public class Main {
        return copy;
    }
 
-
-
-    private static int[] getIntegers(int number) {
+   private static int[] getIntegers(int number) {
 
         System.out.println("Enter " + number +" integer values.\r");
         int[] values = new int[number];
@@ -127,6 +142,7 @@ public class Main {
         }
         return values;
     }
+
     public static double getAverage( int[] myArray){
 
         int sum = 0;
