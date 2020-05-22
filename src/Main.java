@@ -7,13 +7,13 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        int[] array = {1,2,3,4,5};
-        int[] copy = Arrays.copyOf(array,3);
-
-        for (int i = 0; i < copy.length; i++) {
-            System.out.println(copy[i]);
-
-        }
+//        int[] array = {1,2,3,4,5};
+//        int[] copy = Arrays.copyOf(array,3);
+//
+//        for (int i = 0; i < copy.length; i++) {
+//            System.out.println(copy[i]);
+//
+//        }
 //        int[] myIntegers = getIntegers(5);
 //        for (int i = 0; i <myIntegers.length ; i++) {
 //            System.out.println("Element" + i + ",typed value was "+myIntegers[i]);
@@ -36,9 +36,38 @@ public class Main {
 //            System.out.println(myArray[i]);
 //        }
 //        int[] test = readFromConsule();
-        printInput(test);
-        sortInput(test);
+ //       printInput(test);
+   //     sortInput(test);
+
+        System.out.println("Please enter count");
+        int count = scanner.nextInt();
+        int[] input = readIntegers(count);
+        int min = findMin(input);
+        System.out.println(min);
    }
+
+    private static int[] readIntegers(int count){
+
+        int[] input =new int[count];
+        System.out.println("Please inter " + count + "Integers");
+        for (int i = 0; i <count ; i++) {
+            input[i]=scanner.nextInt();
+        }
+
+        return input;
+
+    }
+
+    private static int findMin(int[] input){
+
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i <input.length ; i++) {
+            if (input[i]<min) {
+                min =input[i];
+            }
+            }
+        return min;
+        }
 
    private static int[] readFromConsule(){
 
